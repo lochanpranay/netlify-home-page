@@ -59,13 +59,15 @@ ul[class*="menu"] {
     list-style-type: none;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 html,
 body {
     font-size: 16px;
     font-family: var(--font-sans-serif);
     line-height: 1.5;
-    /* max-width: 100%; */
-    /* overflow-x: hidden; */
     height: auto;
 }
 
@@ -159,6 +161,12 @@ body {
     z-index: 1;
 }
 
+.ham-checkbx:checked ~ main,
+.ham-checkbx:checked ~ footer,
+.ham-checkbx:checked ~ div[class="break"] {
+    display: none;
+}
+
 .ham-checkbx:checked + label + .line-1 {
     border-top: 0.2rem solid var(--color-white);
     padding: 0;
@@ -211,16 +219,6 @@ body {
     order: 1;
     flex: 0 1 45rem;
 }
-
-/* .mil-text-container > h1 {
-    font-size: 3em;
-    font-family: var(--font-nunito);
-    font-weight: 900;
-    line-height: 1.2;
-    /* text-align: center; 
-    margin-bottom: 1.5rem;
-} 
-*/
 
 p.large {
     color: var(--color-black);
@@ -710,10 +708,6 @@ ol.flex-container li {
     flex: 0 1 50px;
 }
 
-/* .icon-container-imgs .img-logo-container.github {
-    flex: 0 1 100px;
-} */
-
 .icon-container-imgs img {
     width: 100%;
 }
@@ -740,12 +734,6 @@ ol.flex-container li {
     margin-bottom: 1rem;
     text-align: center;
 }
-
-/* .framework-support {
-    background: linear-gradient(90deg, #161122 21px, transparent 1%) center, linear-gradient(#161122 21px, transparent 1%) center, #a799cc;
-    background-size: 22px 22px;
-    background-repeat: repeat-x;
-} */
 
 .icon-container.square {
     justify-content: center;
@@ -1073,7 +1061,7 @@ nav.nav-page-end .links-wrap {
 nav.nav-page-end .links-container {
     margin-right: 1.5rem;
     margin-bottom: 2rem;
-    flex: 0 0 10rem;
+    flex: 0 0 8rem;
 }
 
 nav.nav-page-end .footer-title {
@@ -1083,12 +1071,12 @@ nav.nav-page-end .footer-title {
 }
 
 nav.nav-page-end .links-container li {
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.65rem;
 }
 
 footer.footer-page-end .links-container a,
 footer.footer-page-end .footer-nav-2 a {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--color-gray-3);
     text-decoration: none;
 }
@@ -1253,7 +1241,5 @@ nav.footer-nav-2 ul.overflow-menu li {
 /* footer section end */
 
 /* media queries start */
-@media screen and (min-width: 900px) {
-}
 
 /* media queries end */
